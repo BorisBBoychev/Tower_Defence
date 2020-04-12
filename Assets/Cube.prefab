@@ -239,8 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad02858c702bb424d8e7d3c359b8fe92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  snapParZ: 10
-  snapParX: 10
 --- !u!114 &6128091689198750031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +248,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2635153512221310994}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c17ca87f307919045bf21da17ed06910, type: 3}
+  m_Script: {fileID: 11500000, guid: ca54fb8acde85e84483e98b9ace6a84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3973848565131872664
