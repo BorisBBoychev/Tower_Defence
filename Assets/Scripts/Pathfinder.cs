@@ -47,10 +47,10 @@ public class Pathfinder : MonoBehaviour
         }
         path.Add(startWaypoint);
         path.Reverse();
-        // for (int i = 1; i < path.Count-1; i++) //todo consider if to remove
-        // {
-        //     path[i].SetTopColor(Color.blue);
-        // }
+        for (int i = 1; i < path.Count-1; i++) //todo remove later
+        {
+            path[i].SetTopColor(Color.blue);
+        }
     }
 
     private void BreadthFirstSearch()
