@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3704004674418098442}
   - component: {fileID: 885142271}
   - component: {fileID: 1313972675}
+  - component: {fileID: 2267027526647101079}
+  - component: {fileID: 1917364892}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -25,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6936700296313622080}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -22.06682, y: -20.43171, z: 3.18612}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7835497951203164962}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &885142271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52,19 +54,33 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6936700296313622080}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108432cde1aa25e458575dade52b16a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 10
---- !u!54 &1031254629
+  collisionMesh: {fileID: 1031254630}
+  hitPoints: 20
+--- !u!65 &2267027526647101079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6936700296313622080}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 7.3, y: 7.3, z: 7.3}
+  m_Center: {x: -4.2, y: 10.6, z: 0}
+--- !u!54 &1917364892
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7833580016819950332}
+  m_GameObject: {fileID: 6936700296313622080}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -87,19 +103,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 15.000004, y: 14, z: 13.000003}
   m_Center: {x: -0.0000019073486, y: 7, z: 0.000000059604645}
---- !u!114 &1031254628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7833580016819950332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 108432cde1aa25e458575dade52b16a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitPoints: 20
 --- !u!1001 &7832771350011233234
 PrefabInstance:
   m_ObjectHideFlags: 0
