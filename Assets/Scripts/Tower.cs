@@ -13,13 +13,12 @@ public class Tower : MonoBehaviour
     //State of tower
     Transform enemyToTarget;
 
-
     void Update()
     {
         SetTargetEnemy();
         if (enemyToTarget)
         {
-            objectToMove.LookAt(enemyToTarget);
+            objectToMove.LookAt(enemyToTarget.position);
             FireAtEnemy();
         }
         else

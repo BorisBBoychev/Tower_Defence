@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class EnemyDamage : MonoBehaviour
 {
+    [SerializeField] Collider collisionMesh;
     [SerializeField] private int hitPoints = 10;
-    public int coins;
+    [SerializeField] private ParticleSystem hitParticlePrefab;    
     void Start()
     {
         
@@ -18,7 +19,6 @@ public class EnemyDamage : MonoBehaviour
         if (hitPoints <= 0)
         {
             KillEnemy();
-            coins += 10;
         }
     }
 
@@ -29,6 +29,7 @@ public class EnemyDamage : MonoBehaviour
 
     void ProcessHit()
     {
+        hitParticlePrefab.Play();
         hitPoints -= 1;
     }
 }
