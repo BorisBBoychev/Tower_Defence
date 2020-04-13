@@ -29,26 +29,34 @@ public class Pathfinder : MonoBehaviour
     {
         if (path.Count == 0)
         {
-            LoadBlocks();
-            ColorStartAndEnd();
-            BreadthFirstSearch();
-            CreatePath();
+            CalculatePath();
         }
         return path;
+    }
+
+    private void CalculatePath()
+    {
+        LoadBlocks();
+        ColorStartAndEnd();
+        BreadthFirstSearch();
+        CreatePath();
     }
 
     private void CreatePath()
     {
         path.Add(endWaypoint);
+        endWaypoint.isPlaceable = false;
 
         var previous = endWaypoint.exploredFrom;
-
         while (previous != startWaypoint)
         {
             path.Add(previous);
+            previous.isPlaceable = false;
             previous = previous.exploredFrom;
+
         }
         path.Add(startWaypoint);
+        startWaypoint.isPlaceable = false;
         path.Reverse();
     }
 

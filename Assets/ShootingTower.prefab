@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToMove: {fileID: 4403622949447465488}
-  enemyToTarget: {fileID: 0}
   targetDistance: 30
   bullets: {fileID: 4772524216583827653}
 --- !u!1 &8583597028813748348
@@ -914,7 +913,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 10
       maxCurve:
         serializedVersion: 2

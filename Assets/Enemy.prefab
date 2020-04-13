@@ -20,7 +20,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4725175176376340937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 108432cde1aa25e458575dade52b16a1, type: 3}
   m_Name: 
@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 4726209258390683716}
   - component: {fileID: 929860169247977398}
   - component: {fileID: 2326176474734449247}
+  - component: {fileID: 1878086203}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -88,6 +89,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1878086203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4726209258390683723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 108432cde1aa25e458575dade52b16a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionMesh: {fileID: 0}
+  hitPoints: 10
 --- !u!1001 &4726209259170676967
 PrefabInstance:
   m_ObjectHideFlags: 0

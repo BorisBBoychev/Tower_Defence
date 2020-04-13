@@ -9,6 +9,7 @@ public class Waypoint : MonoBehaviour
     //public is ok here because it is a data class
     public bool isExplored = false;
     public Waypoint exploredFrom;
+    public bool isPlaceable = true;
 
     private Vector2Int gridPos;
     const int gridSize = 10;
@@ -25,6 +26,18 @@ public class Waypoint : MonoBehaviour
             //SetTopColor(exploredColor);
         }
     }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0)) //left click
+        {
+            if (isPlaceable)
+            {
+                print("Placeable at " + gameObject);
+            }
+        }
+    }
+
     public Vector2Int GetGridPos()
     {
         return new Vector2Int(
