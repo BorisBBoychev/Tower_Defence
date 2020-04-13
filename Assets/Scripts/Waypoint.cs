@@ -1,10 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
     [SerializeField] private Color exploredColor;
+    [SerializeField]GameObject towerPrefab;
+    private GameObject instanciatedObject;
 
     //public is ok here because it is a data class
     public bool isExplored = false;
@@ -33,7 +36,18 @@ public class Waypoint : MonoBehaviour
         {
             if (isPlaceable)
             {
-                print("Placeable at " + gameObject);
+                 instanciatedObject = Instantiate(towerPrefab, transform.position, Quaternion.identity);
+                 //Destroy(instanciatedObject , 10f); //destroys object after amount of time
+                isPlaceable = false;
+            }
+        }
+        else if (Input.GetMouseButton(1)) //right click
+        {
+
+            if (!isPlaceable)
+            {
+                Destroy(instanciatedObject);
+                isPlaceable = true;
             }
         }
     }

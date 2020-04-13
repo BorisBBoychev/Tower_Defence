@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] private int hitPoints = 10;
-
+    public int coins;
     void Start()
     {
         
@@ -18,6 +18,7 @@ public class EnemyDamage : MonoBehaviour
         if (hitPoints <= 0)
         {
             KillEnemy();
+            coins += 10;
         }
     }
 
