@@ -27,10 +27,13 @@ public class Pathfinder : MonoBehaviour
 
     public List<Waypoint> GetPath()
     {
-        LoadBlocks();
-        ColorStartAndEnd();
-        BreadthFirstSearch();
-        CreatePath();
+        if (path.Count == 0)
+        {
+            LoadBlocks();
+            ColorStartAndEnd();
+            BreadthFirstSearch();
+            CreatePath();
+        }
         return path;
     }
 
@@ -47,10 +50,6 @@ public class Pathfinder : MonoBehaviour
         }
         path.Add(startWaypoint);
         path.Reverse();
-        for (int i = 1; i < path.Count-1; i++) //todo remove later
-        {
-            path[i].SetTopColor(Color.blue);
-        }
     }
 
     private void BreadthFirstSearch()
