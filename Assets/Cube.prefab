@@ -157,6 +157,7 @@ MonoBehaviour:
   exploredColor: {r: 0, g: 0.13257003, b: 1, a: 0}
   towerPrefab: {fileID: 2383867959887158728, guid: 213ae061396cba7468c136051dbf964d,
     type: 3}
+  towerLimit: 0
   isExplored: 0
   exploredFrom: {fileID: 0}
   isPlaceable: 1
