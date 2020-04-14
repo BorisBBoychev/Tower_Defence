@@ -69,6 +69,7 @@ MonoBehaviour:
   hitPoints: 2
   hitParticlePrefab: {fileID: 5997651475314557996}
   deathParticlePrefab: {fileID: 5639268779623771508}
+  enemyUI: {fileID: 0}
 --- !u!114 &1306065840739093125
 MonoBehaviour:
   m_ObjectHideFlags: 0
