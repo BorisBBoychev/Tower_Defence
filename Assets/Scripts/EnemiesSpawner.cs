@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Timeline;
+using UnityEngine.UI;
 
 public class EnemiesSpawner : MonoBehaviour
 {
@@ -9,10 +10,13 @@ public class EnemiesSpawner : MonoBehaviour
     [SerializeField] private float secondsBetweenSpawns = 2f;
     [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private Transform enemyParent;
+    [SerializeField] public Text enemyCountText;
+    public int enemyCounter;
 
     // Start is called before the first frame update
     void Start()
     {
+        enemyCountText.text = "Enemies:" + enemyCounter.ToString();
         StartCoroutine(SpawningEnemies());
     }
 
@@ -22,6 +26,8 @@ public class EnemiesSpawner : MonoBehaviour
         {
             var newEnemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
             newEnemy.transform.parent = enemyParent;
+            enemyCounter++;
+            enemyCountText.text = "Enemies:" + enemyCounter.ToString();
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }
 
@@ -30,6 +36,5 @@ public class EnemiesSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

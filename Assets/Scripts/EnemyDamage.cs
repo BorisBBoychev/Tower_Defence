@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyDamage : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] private ParticleSystem deathParticlePrefab;
     void Start()
     {
-        
+
     }
 
     void OnParticleCollision(GameObject other)
@@ -23,13 +24,14 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
+    
+
     private void KillEnemy()
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-
+        
         float destroyDelay = vfx.main.duration;
-
         Destroy(vfx.gameObject , destroyDelay);
         Destroy(gameObject);
     }
