@@ -3101,6 +3101,7 @@ MonoBehaviour:
   towerLimit: 5
   towerPrefab: {fileID: 8126920818785924783, guid: 213ae061396cba7468c136051dbf964d,
     type: 3}
+  towerParent: {fileID: 1041388139}
 --- !u!1001 &1042509322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5755,7 +5756,7 @@ PrefabInstance:
     - target: {fileID: 7959307568208474525, guid: b6a253699a9c8b1499a2239e8f5a02ab,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: 1.02
       objectReference: {fileID: 0}
     - target: {fileID: 7959307568208474525, guid: b6a253699a9c8b1499a2239e8f5a02ab,
         type: 3}
