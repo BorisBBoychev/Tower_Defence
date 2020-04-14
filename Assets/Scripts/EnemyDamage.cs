@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class EnemyDamage : MonoBehaviour
 {
     [SerializeField] Collider collisionMesh;
-    [SerializeField] private int hitPoints = 10;
+    [SerializeField] int hitPoints = 10;
     [SerializeField] ParticleSystem hitParticlePrefab;
     [SerializeField] private ParticleSystem deathParticlePrefab;
 
@@ -20,20 +20,14 @@ public class EnemyDamage : MonoBehaviour
         if (hitPoints <= 0)
         {
             KillEnemy();
-            SendKillMessage();
+            KillCounter.instance.killCounter++;
         }
     }
 
-
-    public bool SendKillMessage()
-    {
-        return true;
-    }
      void KillEnemy()
     {
         var vfx = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
         vfx.Play();
-        
         float destroyDelay = vfx.main.duration;
         Destroy(vfx.gameObject , destroyDelay);
         Destroy(gameObject);

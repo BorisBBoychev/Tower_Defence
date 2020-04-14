@@ -48,7 +48,6 @@ MonoBehaviour:
   objectToMove: {fileID: 4403622949447465488}
   targetDistance: 30
   bullets: {fileID: 4772524216583827653}
-  explosion: {fileID: 839673408494573109}
   baseWaypoint: {fileID: 0}
 --- !u!1 &8583597028813748348
 GameObject:
@@ -4861,12 +4860,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab79a37535b979f48b6de56e3a0a5cb0, type: 3}
---- !u!198 &839673408494573109 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
-    type: 3}
-  m_PrefabInstance: {fileID: 677568194087164149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4400683126344896120
 PrefabInstance:
   m_ObjectHideFlags: 0
