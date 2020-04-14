@@ -1,30 +1,45 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
 public class TowerFactory : MonoBehaviour
 {
     [SerializeField] private int towerLimit = 5;
     [SerializeField] private Tower towerPrefab;
-    private int towerCounter;
-
+    public Queue<Tower> towers = new Queue<Tower>();
     public void AddTower(Waypoint baseWaypoint)
     {
-        if (towerCounter < towerLimit)
+        var towerPrefab = FindObjectsOfType<Tower>();
+        int towersCount = towers.Count;
+        print(towersCount);
+        if (towersCount < towerLimit)
         {
             InstantiateTower(baseWaypoint);
         }
         else
         {
-            print("Limit hit");
+            MoveExistingTower(baseWaypoint);
         }
-        
+    }
+
+    private void MoveExistingTower(Waypoint baseWaypoint)
+    {
+        var bottomTower = towers.Dequeue();
+        bottomTower.baseWaypoint.isPlaceable = true;
+        baseWaypoint.isPlaceable = false;
+
+        bottomTower.transform.position = baseWaypoint.transform.position;
+        towers.Enqueue(bottomTower);
     }
 
     private void InstantiateTower(Waypoint baseWaypoint)
     {
-        Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity);
-        towerCounter++;
+        var newTower = Instantiate(towerPrefab, baseWaypoint.transform.position, Quaternion.identity);
         baseWaypoint.isPlaceable = false;
+
+        newTower.baseWaypoint = baseWaypoint;
+        baseWaypoint.isPlaceable = false;
+        towers.Enqueue(newTower);
     }
 }
