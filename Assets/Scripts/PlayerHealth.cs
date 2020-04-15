@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts;
     public Sprite fullHeart;
     public Sprite emptyHeart;
+    public GameObject deahtMenuUI;
+    public static bool isDead = false;
 
     void Start()
     {
@@ -25,27 +28,43 @@ public class PlayerHealth : MonoBehaviour
         }
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < health)
+            try
             {
-                hearts[i].sprite = fullHeart;
+                if (i < health)
+                {
+                    hearts[i].sprite = fullHeart;
+                }
+                else
+                {
+                    hearts[i].sprite = emptyHeart;
+                }
+                if (i < numOfHearts)
+                {
+                    hearts[i].enabled = true;
+                }
+                else
+                {
+                    hearts[i].enabled = false;
+                }
             }
-            else
+            catch
             {
-                hearts[i].sprite = emptyHeart;
+                //do nothing
             }
-            if (i < numOfHearts)
-            {
-                hearts[i].enabled = true;
-            }
-            else
-            {
-                hearts[i].enabled = false;
-            }
+           
         }
     }
 
     void OnTriggerEnter(Collider other)
     {
+        if (health <= 1)
+        {
+            deahtMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            isDead = true;
+            return;
+        }
+
         health--;
     }
 }
