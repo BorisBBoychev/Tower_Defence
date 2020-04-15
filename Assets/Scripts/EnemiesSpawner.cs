@@ -10,7 +10,7 @@ public class EnemiesSpawner : MonoBehaviour
     [SerializeField] private float secondsBetweenSpawns = 2f;
     [SerializeField] private GameObject enemyToSpawn;
     [SerializeField] private Transform enemyParent;
-    public GameObject newEnemy;
+    [SerializeField] private AudioClip enemySpawnSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,8 @@ public class EnemiesSpawner : MonoBehaviour
     {
         while (true)
         { 
-            newEnemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
+            GetComponent<AudioSource>().PlayOneShot(enemySpawnSFX);
+            var newEnemy = Instantiate(enemyToSpawn, transform.position, Quaternion.identity);
             newEnemy.transform.parent = enemyParent;
             yield return new WaitForSeconds(secondsBetweenSpawns);
         }

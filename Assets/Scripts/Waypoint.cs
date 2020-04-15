@@ -33,7 +33,7 @@ public class Waypoint : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(0)) //left click
+        if (Input.GetMouseButtonDown(0) && !PauseMenu.gameIsPaused) //left click
         {
             if (isPlaceable)
             {
